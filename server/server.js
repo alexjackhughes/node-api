@@ -9,7 +9,7 @@ let {User} = require('./models/user');
 let app = express();
 app.use(bodyParser.json());
 
-/* POST API */
+
 app.post('/todos', (req, res) => {
   let todo = new Todo({
     text: req.body.text
@@ -20,7 +20,6 @@ app.post('/todos', (req, res) => {
     res.status(400).send(e);
   });
 });
-
 
 app.get('/todos', (req, res) => {
   Todo.find().then((todos) => {
